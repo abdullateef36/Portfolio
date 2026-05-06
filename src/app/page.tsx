@@ -227,11 +227,21 @@ const moreLinks = [
   },
 ];
 
-const signalItems = [
-  "Interface systems",
-  "Product velocity",
-  "Scalable frontends",
-  "Cross-platform thinking",
+const profilePoints = [
+  {
+    title: "What I build",
+    body: "Production-ready interfaces for startups and businesses that need clarity, speed, and strong visual structure.",
+  },
+  {
+    title: "How I work",
+    body: "I balance frontend polish with practical engineering, making sure layouts, flows, and integrations feel intentional.",
+  },
+];
+
+const profileStats = [
+  { value: "7+", label: "Live projects shipped" },
+  { value: "Next.js", label: "Primary framework" },
+  { value: "React Native", label: "Cross-platform range" },
 ];
 
 export default function Home() {
@@ -369,77 +379,56 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="mt-5 grid gap-5">
-                  <div className="signal-board">
-                    <div className="signal-grid" />
-                    <div className="signal-core">
-                      <div className="signal-core-ring signal-core-ring-a" />
-                      <div className="signal-core-ring signal-core-ring-b" />
-                      <div className="signal-core-ring signal-core-ring-c" />
-                      <div className="signal-core-dot" />
+                <div className="profile-flow">
+                  <div className="profile-stage">
+                    <div className="profile-stage__grid" />
+                    <div className="profile-stage__beam profile-stage__beam-a" />
+                    <div className="profile-stage__beam profile-stage__beam-b" />
+                    <div className="profile-stage__copy profile-stage__copy-main">
+                      <span className="profile-stage__eyebrow">Current focus</span>
+                      <strong>Frontend systems with clearer pacing, better UX, and strong production readiness.</strong>
                     </div>
-                    <div className="signal-panel signal-panel-top">
-                      <span className="signal-kicker">Current direction</span>
-                      <strong>Frontend systems that feel premium</strong>
+                    <div className="profile-stage__copy profile-stage__copy-side">
+                      <span className="profile-stage__eyebrow">Approach</span>
+                      <strong>Clean structure, sharp interaction choices, and engineering that can scale with product needs.</strong>
                     </div>
-                    <div className="signal-panel signal-panel-bottom">
-                      <span className="signal-kicker">Build mode</span>
-                      <strong>Fast iteration + practical product engineering</strong>
+                    <div className="profile-stage__badge">
+                      <span>Frontend Signal</span>
                     </div>
-                    {signalItems.map((item, index) => (
-                      <span
-                        key={item}
-                        className={`signal-tag signal-tag-${index + 1}`}
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {profilePoints.map((point, index) => (
+                      <article
+                        key={point.title}
+                        className="profile-story fade-rise"
+                        style={{ animationDelay: `${0.1 + index * 0.08}s` }}
                       >
-                        {item}
-                      </span>
+                        <div className="profile-story__index">
+                          {String(index + 1).padStart(2, "0")}
+                        </div>
+                        <div>
+                          <h3 className="text-base font-semibold text-[var(--ink-strong)]">
+                            {point.title}
+                          </h3>
+                          <p className="mt-2 text-sm leading-7 text-[var(--muted-strong)]">
+                            {point.body}
+                          </p>
+                        </div>
+                      </article>
                     ))}
                   </div>
 
-                  <div className="grid gap-3 text-sm text-[var(--muted-strong)]">
-                    <div className="grid gap-3 sm:grid-cols-3">
-                      <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--glass)] px-4 py-4">
-                        <span className="block text-[0.65rem] uppercase tracking-[0.28em] text-[var(--muted)]">
-                          Focus
-                        </span>
-                        <strong className="mt-3 block text-base text-[var(--ink-strong)]">
-                          UI Systems
-                        </strong>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {profileStats.map((item) => (
+                      <div
+                        key={item.label}
+                        className="profile-stat"
+                      >
+                        <strong className="profile-stat__value">{item.value}</strong>
+                        <span className="profile-stat__label">{item.label}</span>
                       </div>
-                      <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--glass)] px-4 py-4">
-                        <span className="block text-[0.65rem] uppercase tracking-[0.28em] text-[var(--muted)]">
-                          Stack
-                        </span>
-                        <strong className="mt-3 block text-base text-[var(--ink-strong)]">
-                          Next + Firebase
-                        </strong>
-                      </div>
-                      <div className="rounded-[1.4rem] border border-[var(--line)] bg-[var(--glass)] px-4 py-4">
-                        <span className="block text-[0.65rem] uppercase tracking-[0.28em] text-[var(--muted)]">
-                          Method
-                        </span>
-                        <strong className="mt-3 block text-base text-[var(--ink-strong)]">
-                          Ship Clean
-                        </strong>
-                      </div>
-                    </div>
-
-                    <div className="marquee-shell">
-                      <div className="marquee-track">
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>Firebase</span>
-                        <span>React Native</span>
-                        <span>UX polish</span>
-                        <span>API integration</span>
-                        <span>Next.js</span>
-                        <span>TypeScript</span>
-                        <span>Firebase</span>
-                        <span>React Native</span>
-                        <span>UX polish</span>
-                        <span>API integration</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </div>
               </div>
