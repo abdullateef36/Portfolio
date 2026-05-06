@@ -1,29 +1,20 @@
-// app/nosidebar/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter } from "next/font/google";
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Business Dashboard.",
+  title: "Akinola Abdullateef | Frontend & Full-Stack Developer",
+  description:
+    "Portfolio of Akinola Abdullateef, a Lagos-based frontend and full-stack developer building polished digital products with Next.js, React, TypeScript, and Firebase.",
 };
 
-export default function NoSidebarLayout({
+export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        {/* Only render the page content without a sidebar */}
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
