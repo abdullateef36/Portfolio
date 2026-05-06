@@ -257,7 +257,7 @@ export default function Home() {
           <div className="flex flex-wrap gap-3 text-sm">
             <Link
               href="mailto:akinolaabdulateef36@gmail.com"
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--card)] px-4 py-2 transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--card)] px-4 py-2 font-medium !text-[var(--ink-strong)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
             >
               <Mail className="h-4 w-4" />
               Email Me
@@ -304,7 +304,7 @@ export default function Home() {
                 <Link
                   href="https://github.com/abdullateef36"
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-4 py-2 transition hover:border-[var(--accent)] hover:text-[var(--ink-strong)]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line)] px-4 py-2 font-medium !text-[var(--ink-strong)] transition hover:border-[var(--accent)] hover:text-[var(--ink-strong)]"
                 >
                   <Github className="h-4 w-4" />
                   github.com/abdullateef36
@@ -533,13 +533,13 @@ export default function Home() {
                       Live Preview
                       <ExternalLink className="h-4 w-4" />
                     </Link>
-                    <Link
-                      href={project.repo}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
-                    >
-                      Source
-                      <Github className="h-4 w-4" />
+                      <Link
+                        href={project.repo}
+                        target="_blank"
+                        className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-4 py-2 text-sm font-medium !text-[var(--ink-strong)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
+                      >
+                        Source
+                        <Github className="h-4 w-4" />
                     </Link>
                   </div>
                 </div>
@@ -684,7 +684,7 @@ export default function Home() {
                   key={item.label}
                   href={item.href}
                   target="_blank"
-                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-4 py-2 text-sm transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
+                  className="inline-flex items-center gap-2 rounded-full border border-[var(--line-strong)] px-4 py-2 text-sm font-medium !text-[var(--ink-strong)] transition hover:-translate-y-0.5 hover:border-[var(--accent)]"
                 >
                   {item.label}
                   <ArrowUpRight className="h-4 w-4" />
